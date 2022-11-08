@@ -62,7 +62,7 @@ class _ProgramCounterState extends State<ProgramCounter> {
                   ),
                   child: FloatingActionButton(
                     onPressed: _decrementCounter,
-                    tooltip: 'Increment',
+                    tooltip: 'Decrement',
                     elevation: 0,
                     child: const Icon(Icons.remove),
                   ),

@@ -16,7 +16,7 @@ Stateless widget merupakan widget yang bersifat statis di mana seluruh konten ya
 ## Widget yang digunakan dan fungsinya
 - `MaterialApp`, berfungsi untuk menambahkan default theme ke children widget
 - `Scaffold`, untuk mengimplementasikan struktur umum material layout design
-- `Appbar`, salah satu bagian dari struktur umum maetrial layout design untuk menampilkan konten pada bagian atas aplikasi 
+- `AppBar`, salah satu bagian dari struktur umum maetrial layout design untuk menampilkan konten pada bagian atas aplikasi 
 - `Text`, berfungsi untuk menampilkan text
 - `Column`, berfungsi untuk megatur layout widget secara perspektif vertikal
 - `Row`, berfungsi untuk menatur layout widget secara perspektif horizontal
