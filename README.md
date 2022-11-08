@@ -1,16 +1,28 @@
-# counter_7
 
-A new Flutter project.
+# PBP Assignment 7 - *Elemen Dasar Flutter*
 
-## Getting Started
+> Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh 
+> Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
 
-This project is a starting point for a Flutter application.
+**Nama  : Wayan Angga Putra Aldita**
+**NPM   : 2106650065**
+**Kelas : C**
 
-A few resources to get you started if this is your first Flutter project:
+## Perbedaan stateless widget dan stateful widget
+Stateless widget merupakan widget yang bersifat statis di mana seluruh konten yang dimuat di awal tidak dapat dibuah setelah diinisialisasikan. Sedangkan, Stateful widget merupakan widget yang bersifat dinamis di mana seluruh konten yang dimuat di awal dapat berubah-ubah dengan memperhatikan state.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Widget yang digunakan dan fungsinya
+- MaterialApp
+- Scaffold, untuk mengimplementasikan struktur umum material layout design
+- Appbar, salah satu bagian dari struktur umum maetrial layout design untuk menampilkan konten pada bagian atas aplikasi 
+- Text, berfungsi untuk menampilkan text
+- Column, berfungsi untuk megatur layout widget secara perspektif vertikal
+- Row, berfungsi untuk menatur layout widget secara perspektif horizontal
+- Pading, berufngsi untuk memebrikan jarak pada widget
+- SizedBox, berfungsi untuk membuat sebuah box dengan size tertentu (default 0 x 0)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Fungsi dan dampak `setState()`
+`setState()` berfungsi untuk memberitahu suatu stateful widget bahwa terdapat perubahan pada state sehingga aplikasi akan memuat ulang widget tersebut dengan value yang baru. Pada assignment ini `setState()` berdampak pada tampilan value variabel _counter pada layar serta menampilkan decrement floating action button pada state _counter > 0.
+
+## Perbedaan const *const* dan *final*
+Const merupakan *modifier variable* dari sebuah value, di mana value yang ditetapkan bernilai konstan atau tetap. Deklarasi dengan const memerlukan value saat *compile time*. Sedangkan *final* merupakan *modifer variable* yang membuat reference menjadi tetap, namun valuenya bisa berubah-ubah, serta nilai dari variable yang dideklarasikan secara final tidak perlu diketahui saat *compile time*.
