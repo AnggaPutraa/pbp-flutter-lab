@@ -19,6 +19,7 @@ Stateless widget merupakan widget yang bersifat statis di mana seluruh konten ya
 - `AppBar`, salah satu bagian dari struktur umum maetrial layout design untuk menampilkan konten pada bagian atas aplikasi 
 - `Text`, berfungsi untuk menampilkan text
 - `Column`, berfungsi untuk megatur layout widget secara perspektif vertikal
+- `FloatingActionButton`, salah satu widget build in button untuk menjalankan suatu aksi
 - `Row`, berfungsi untuk menatur layout widget secara perspektif horizontal
 - `Pading`, berufngsi untuk memebrikan jarak pada widget
 - `SizedBox`, berfungsi untuk membuat sebuah box dengan size tertentu (default 0 x 0)
@@ -28,3 +29,9 @@ Stateless widget merupakan widget yang bersifat statis di mana seluruh konten ya
 
 ## Perbedaan const *const* dan *final*
 Const merupakan *modifier variable* dari sebuah value, di mana value yang ditetapkan bernilai konstan atau tetap. Deklarasi dengan const memerlukan value saat *compile time*. Sedangkan *final* merupakan *modifer variable* yang membuat reference menjadi tetap, namun valuenya bisa berubah-ubah, serta nilai dari variable yang dideklarasikan secara final tidak perlu diketahui saat *compile time*.
+
+## Implementasi Checklist
+- Start aplikasi bernama counter_7
+- Membuat function bernama `decrement` untuk mengurangi dan memperbarui state dari variable `_counter`.
+- Menambahkan satu `FloatingActionButton` untuk mentrigger function `decrement`
+- Adjust `FloatingActionButton` menggunakan widget `Row` & `Pading`
