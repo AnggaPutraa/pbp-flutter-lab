@@ -31,7 +31,7 @@ Stateless widget merupakan widget yang bersifat statis di mana seluruh konten ya
 Const merupakan *modifier variable* dari sebuah value, di mana value yang ditetapkan bernilai konstan atau tetap. Deklarasi dengan const memerlukan value saat *compile time*. Sedangkan *final* merupakan *modifer variable* yang membuat reference menjadi tetap, namun valuenya bisa berubah-ubah, serta nilai dari variable yang dideklarasikan secara final tidak perlu diketahui saat *compile time*.
 
 ## Implementasi Checklist
-- Start aplikasi bernama counter_7
-- Membuat function bernama `decrement` untuk mengurangi dan memperbarui state dari variable `_counter`.
+- Jalankan perintah `flutter create counter_7` untuk membuat aplikasi baru bernama counter_7
+- Membuat function baru bernama `decrement` untuk mengurangi dan memperbarui state variable `_counter`.
 - Menambahkan satu `FloatingActionButton` untuk mentrigger function `decrement`
 - Adjust `FloatingActionButton` menggunakan widget `Row` & `Pading`
