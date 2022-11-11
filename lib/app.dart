@@ -1,5 +1,7 @@
-import 'package:counter_7/program_counter.dart';
 import 'package:flutter/material.dart';
+
+import 'models/budget.dart';
+import 'pages/program_counter.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -8,13 +10,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Budget> budgets = <Budget>[];
     return MaterialApp(
       title: 'Counter 7 App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
-      home: const ProgramCounter(
+      home: ProgramCounter(
         title: 'Program Counter',
+        data: budgets,
       ),
     );
   }

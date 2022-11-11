@@ -1,5 +1,4 @@
-
-# PBP Assignment 7 - *Elemen Dasar Flutter*
+# PBP Assignment 7 - *Flutter Form*
 
 > Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh 
 > Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
@@ -10,28 +9,41 @@
 
 **Kelas : C**
 
-## Perbedaan stateless widget dan stateful widget
-Stateless widget merupakan widget yang bersifat statis di mana seluruh konten yang dimuat di awal tidak dapat dibuah setelah diinisialisasikan. Sedangkan, Stateful widget merupakan widget yang bersifat dinamis di mana seluruh konten yang dimuat di awal dapat berubah-ubah dengan memperhatikan state.
+## Perbedaan `Navigator.push` dan `Navigator.pushReplacement`
+`push` menumpuk route teratas sebelumnya dengan widget baru, sedangkan `pushReplacement` menggantikan route teratas sebelumnya dengan widget baru. Penggunaan `push` pada navigator *tidak menghapus widget sebelumnya*, melainkan hanya *ditumpuk* dengan widget baru, sedangkan `pushReplacement` *menggantikan widget sebelumnya* dengan widget baru.
 
 ## Widget yang digunakan dan fungsinya
-- `MaterialApp`, berfungsi untuk menambahkan default theme ke children widget
 - `Scaffold`, untuk mengimplementasikan struktur umum material layout design
-- `AppBar`, salah satu bagian dari struktur umum maetrial layout design untuk menampilkan konten pada bagian atas aplikasi 
+- `AppBar`, salah satu bagian dari struktur umum maetrial layout design untuk menampilkan konten pada bagian atas
 - `Text`, berfungsi untuk menampilkan text
+- `Container`, berfungsi untuk membungkus suatu widget dan memberikan pading serta pading
 - `Column`, berfungsi untuk megatur layout widget secara perspektif vertikal
-- `FloatingActionButton`, salah satu widget build in button untuk menjalankan suatu aksi
 - `Row`, berfungsi untuk menatur layout widget secara perspektif horizontal
 - `Pading`, berufngsi untuk memebrikan jarak pada widget
-- `SizedBox`, berfungsi untuk membuat sebuah box dengan size tertentu (default 0 x 0)
+- `Form`, container untuk mengelompokan form field
+- `TextFormField`, sebuah form field yang menampung text field 
+- `DropdownButton`, material design button untuk menampung list of item 
+- `showDatePicker`, material design untuk menampilkan dialog date picker 
+- `ListView.builder`, menggenerate linear *array of widget* yang scrollable 
+- `ElevatedButton`, tombol build-in untuk mentrigger suatu event
 
-## Fungsi dan dampak `setState()`
-`setState()` berfungsi untuk memberitahu suatu stateful widget bahwa terdapat perubahan pada state sehingga aplikasi akan memuat ulang widget tersebut dengan value yang baru. Pada assignment ini `setState()` berdampak pada tampilan value variabel _counter pada layar serta menampilkan decrement floating action button pada state _counter > 0.
+## Jenis-jenis event pada Flutter
+- `onPressed`
+- `onLongPress`
+- `onHover`
+- `onFocusChange`
+- `onFocusChange`
+- `onTap`
 
-## Perbedaan const *const* dan *final*
-Const merupakan *modifier variable* dari sebuah value, di mana value yang ditetapkan bernilai konstan atau tetap. Deklarasi dengan const memerlukan value saat *compile time*. Sedangkan *final* merupakan *modifer variable* yang membuat reference menjadi tetap, namun valuenya bisa berubah-ubah, serta nilai dari variable yang dideklarasikan secara final tidak perlu diketahui saat *compile time*.
+## Cara kerja Navigator
+Widget `Navigator` bekerja dengan menampilkan screen teratas pada stack of route dengan memperhatikan method yang digunakan pada object `Navigator`. Dalam melakukan navigasi ke layar baru, `BuildContext` yang menyimpan route widget akan diakses oleh Navigator dengan menggunakan method pada class Navigator seperti `push()`, `pop()`, `pushReplacement()`, dan lain-lain.
 
-## Implementasi Checklist
-- Jalankan perintah `flutter create counter_7` untuk membuat aplikasi baru bernama counter_7
-- Membuat function baru bernama `decrement` untuk mengurangi dan memperbarui state variable `_counter`.
-- Menambahkan satu `FloatingActionButton` untuk mentrigger function `decrement`
-- Adjust `FloatingActionButton` menggunakan widget `Row` & `Pading`
+## Pengimplementasian Checklist
+- Membuat sebuah halaman baru bernama BudgeteList dan BudgetForm
+- Membuat sebuah custom Drawer widget dengan menerapkan *seperation concern by refactoring* untuk ditampilkan di tiap halaman
+- Set up navigasi halaman pada Drawer
+- Membuat global List yang terletak pada root widget untuk menyimpan object Budget
+- Implementasi halaman form dengan beberapa widget TextFormField, DatePicker, dan DropdownMenu 
+- Menambahkan package external Intl untuk date formating
+- Handling Save button untuk menyimpan transaksi baru ke dalam global List
+- Menampilkan semua object Budget dengan custom BudgetCard widget dengan melakukan iterasi melalui ListView.Builder

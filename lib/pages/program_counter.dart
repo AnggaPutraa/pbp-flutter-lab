@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../models/budget.dart';
+import '../widgets/counter_seven_drawer.dart';
+
 class ProgramCounter extends StatefulWidget {
   const ProgramCounter({
     Key? key,
-    required this.title,
+    required this.title, required this.data,
   }) : super(key: key);
 
   final String title;
+  final List<Budget> data;
 
   @override
   State<ProgramCounter> createState() => _ProgramCounterState();
@@ -33,6 +37,9 @@ class _ProgramCounterState extends State<ProgramCounter> {
       appBar: AppBar(
         title: Text(widget.title),
         elevation: 0,
+      ),
+      drawer: CounterSevenDrawer(
+        data: widget.data,
       ),
       body: Center(
         child: Column(
