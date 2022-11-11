@@ -39,11 +39,11 @@
 Widget `Navigator` bekerja dengan menampilkan screen teratas pada stack of route dengan memperhatikan method yang digunakan pada object `Navigator`. Dalam melakukan navigasi ke layar baru, `BuildContext` yang menyimpan route widget akan diakses oleh Navigator dengan menggunakan method pada class Navigator seperti `push()`, `pop()`, `pushReplacement()`, dan lain-lain.
 
 ## Pengimplementasian Checklist
-- Membuat sebuah halaman baru bernama BudgeteList dan BudgetForm
-- Membuat sebuah custom Drawer widget dengan menerapkan *seperation concern by refactoring* untuk ditampilkan di tiap halaman
-- Set up navigasi halaman pada Drawer
+- Membuat sebuah halaman baru bernama *BudgeteList* dan *BudgetForm*
+- Membuat sebuah custom `Drawer` widget dengan menerapkan *seperation concern by refactoring* untuk ditampilkan di tiap halaman
+- Set up navigasi halaman pada `Drawer`
 - Membuat global List yang terletak pada root widget untuk menyimpan object Budget
-- Implementasi halaman form dengan beberapa widget TextFormField, DatePicker, dan DropdownMenu 
+- Implementasi halaman form dengan beberapa widget `TextFormField`, `DatePicker`, dan `DropdownMenu` 
 - Menambahkan package external Intl untuk date formating
 - Handling Save button untuk menyimpan transaksi baru ke dalam global List
-- Menampilkan semua object Budget dengan custom BudgetCard widget dengan melakukan iterasi melalui ListView.Builder
+- Menampilkan semua object Budget dengan custom BudgetCard widget dengan melakukan iterasi melalui `ListView.builder`
