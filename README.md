@@ -24,7 +24,7 @@
 - `TextFormField`, sebuah form field yang menampung text field 
 - `DropdownButton`, material design button untuk menampung list of item 
 - `showDatePicker`, material design untuk menampilkan dialog date picker 
-- `ListView.builder`, menggenerate linear *array of widget* yang scrollable 
+- `ListView.builder`, menggenerate *array of widget* yang *scrollable* 
 - `ElevatedButton`, tombol build-in untuk mentrigger suatu event
 
 ## Jenis-jenis event pada Flutter
