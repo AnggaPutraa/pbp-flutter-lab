@@ -35,7 +35,6 @@ class BudgetList extends StatelessWidget {
                   ),
                 )
               : ListView.builder(
-                  reverse: true,
                   itemCount: data.length,
                   itemBuilder: (context, index) =>
                       BudgetCard(data: data[index]),
