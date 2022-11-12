@@ -16,13 +16,30 @@ class BudgetForm extends StatefulWidget {
 }
 
 class _BudgetFormState extends State<BudgetForm> {
-  final _key = GlobalKey<FormState>();
-  String _title = '';
-  int _nonimal = 0;
   final _status = ['Expense', 'Income'];
-  String _currentStatus = 'Expense';
-  DateTime _transactionDate = DateTime.now();
-  final TextEditingController _dateController = TextEditingController();
+  bool _isDropdownButtonValid = true;
+  late final GlobalKey<FormState> _key;
+  late final TextEditingController _dateController;
+  late String _title;
+  late int _nonimal;
+  String? _currentStatus;
+  late DateTime _transactionDate;
+
+  @override
+  void initState() {
+    _key = GlobalKey<FormState>();
+    _dateController = TextEditingController();
+    _title = '';
+    _nonimal = 0;
+    _transactionDate = DateTime.now();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _dateController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -126,6 +143,7 @@ class _BudgetFormState extends State<BudgetForm> {
                   ),
                 ),
                 DropdownButton(
+                  hint: const Text('Choose Type'),
                   value: _currentStatus,
                   icon: const Icon(Icons.keyboard_arrow_down),
                   items: _status.map((String items) {
@@ -137,11 +155,21 @@ class _BudgetFormState extends State<BudgetForm> {
                   onChanged: (String? value) {
                     setState(() {
                       _currentStatus = value!;
+                      _isDropdownButtonValid = true;
                     });
                   },
                   underline: const SizedBox(),
                   elevation: 2,
                 ),
+                _isDropdownButtonValid
+                    ? const SizedBox()
+                    : const Text(
+                        'Choose a Budget Type !',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 16,
+                        ),
+                      )
               ],
             ),
             Padding(
@@ -151,16 +179,20 @@ class _BudgetFormState extends State<BudgetForm> {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  if (_key.currentState!.validate()) {
+                  if (_key.currentState!.validate() && _currentStatus != null) {
                     Budget newBudgeting = Budget(
                       title: _title,
                       nonimal: _nonimal,
                       transactionDate: _transactionDate,
-                      type: _currentStatus,
+                      type: _currentStatus!,
                     );
                     widget.data.add(newBudgeting);
-                    setState(() {});
+                    _isDropdownButtonValid = true;
                   }
+                  if (_currentStatus == null) {
+                    _isDropdownButtonValid = false;
+                  }
+                  setState(() {});
                 },
                 style: ElevatedButton.styleFrom(
                     minimumSize: const Size.fromHeight(50)),
@@ -170,6 +202,7 @@ class _BudgetFormState extends State<BudgetForm> {
           ],
         ),
       ),
+      resizeToAvoidBottomInset: false,
     );
   }
 }
