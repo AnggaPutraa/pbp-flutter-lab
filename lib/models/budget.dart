@@ -1,13 +1,13 @@
 
 class Budget {
   final String title;
-  final int nonimal;
+  final int nominal;
   final DateTime transactionDate;
   final String type;
 
   Budget({
     required this.title,
-    required this.nonimal,
+    required this.nominal,
     required this.transactionDate,
     required this.type
   });

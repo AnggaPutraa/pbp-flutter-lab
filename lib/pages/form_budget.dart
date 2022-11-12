@@ -21,7 +21,7 @@ class _BudgetFormState extends State<BudgetForm> {
   late final GlobalKey<FormState> _key;
   late final TextEditingController _dateController;
   late String _title;
-  late int _nonimal;
+  late int _nominal;
   String? _currentStatus;
   late DateTime _transactionDate;
 
@@ -30,7 +30,7 @@ class _BudgetFormState extends State<BudgetForm> {
     _key = GlobalKey<FormState>();
     _dateController = TextEditingController();
     _title = '';
-    _nonimal = 0;
+    _nominal = 0;
     _transactionDate = DateTime.now();
     super.initState();
   }
@@ -100,12 +100,12 @@ class _BudgetFormState extends State<BudgetForm> {
                     ),
                     onChanged: (String? value) {
                       setState(() {
-                        _nonimal = int.parse(value!);
+                        _nominal = int.parse(value!);
                       });
                     },
                     onSaved: (String? value) {
                       setState(() {
-                        _nonimal = int.parse(value!);
+                        _nominal = int.parse(value!);
                       });
                     },
                     validator: (String? value) {
@@ -182,7 +182,7 @@ class _BudgetFormState extends State<BudgetForm> {
                   if (_key.currentState!.validate() && _currentStatus != null) {
                     Budget newBudgeting = Budget(
                       title: _title,
-                      nonimal: _nonimal,
+                      nominal: _nominal,
                       transactionDate: _transactionDate,
                       type: _currentStatus!,
                     );

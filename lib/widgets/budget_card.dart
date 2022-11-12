@@ -42,7 +42,7 @@ class BudgetCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Rp ${data.nonimal}',
+                    'Rp ${data.nominal}',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey.shade200,
