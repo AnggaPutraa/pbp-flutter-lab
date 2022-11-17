@@ -1,3 +1,4 @@
+import 'package:counter_7/pages/wacth_list.dart';
 import 'package:flutter/material.dart';
 
 import '../models/budget.dart';
@@ -54,6 +55,19 @@ class CounterSevenDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => BudgetList(
+                      data: data,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Wacth List'),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WatchList(
                       data: data,
                     ),
                   ),
