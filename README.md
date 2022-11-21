@@ -11,7 +11,7 @@
 **Kelas : C**
 
 
-## Pengambilan data JSON tanpa membuat model terlebih
+## Pengambilan data JSON tanpa membuat model
 Possible
 
 ## Widget yang digunakan dan fungsinya
