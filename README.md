@@ -11,7 +11,8 @@
 **Kelas : C**
 
 
-## pengambilan data JSON tanpa membuat model terlebih
+## Pengambilan data JSON tanpa membuat model terlebih
+Possible
 
 ## Widget yang digunakan dan fungsinya
 - `Scaffold`, untuk mengimplementasikan struktur umum material layout design
