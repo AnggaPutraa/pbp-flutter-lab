@@ -1,4 +1,5 @@
-# PBP Assignment 8 - *Flutter Form*
+
+# PBP Assignment 7 - *Elemen Dasar Flutter*
 
 > Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh 
 > Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
@@ -9,8 +10,8 @@
 
 **Kelas : C**
 
-## Perbedaan `Navigator.push` dan `Navigator.pushReplacement`
-`push` menumpuk route teratas sebelumnya dengan widget baru, sedangkan `pushReplacement` menggantikan route teratas sebelumnya dengan widget baru. Penggunaan `push` pada navigator *tidak menghapus widget sebelumnya*, melainkan hanya *ditumpuk* dengan widget baru, sedangkan `pushReplacement` *menggantikan widget sebelumnya* dengan widget baru.
+
+## pengambilan data JSON tanpa membuat model terlebih
 
 ## Widget yang digunakan dan fungsinya
 - `Scaffold`, untuk mengimplementasikan struktur umum material layout design
@@ -26,24 +27,21 @@
 - `showDatePicker`, material design untuk menampilkan dialog date picker 
 - `ListView.builder`, menggenerate *array of widget* yang *scrollable* 
 - `ElevatedButton`, tombol build-in untuk mentrigger suatu event
+- `Drawer`, menampilkan sebuah drawer dengan hamburger menu sebagai main icon
+- `FutureBuilder`, widget untuk menggenerate array of widget berdasarkan suatu snapshot dengan memperhatikan teraksi snapshot terbaru
+- `GestureDetector`, untuk mendeteksi gesture event
 
-## Jenis-jenis event pada Flutter
-- `onPressed`
-- `onLongPress`
-- `onHover`
-- `onFocusChange`
-- `onFocusChange`
-- `onTap`
-
-## Cara kerja Navigator
-Widget `Navigator` bekerja dengan menampilkan screen teratas pada stack of route dengan memperhatikan method yang digunakan pada object `Navigator`. Dalam melakukan navigasi ke layar baru, `BuildContext` yang menyimpan route widget akan diakses oleh Navigator dengan menggunakan method pada class Navigator seperti `push()`, `pop()`, `pushReplacement()`, dan lain-lain.
+## Mekanisme pengambilan dan ekstraksi data JSON pada Flutter
+- Membuat sebuah function **http request** dengan method `GET` secara *async* untuk mengambil data ke pihak eksternal
+- Pada function tersebut lakukan parsing dengan `jsonDecode()` untuk mengubah response **String** menjadi **JSON**
+- Konversi object  **JSON** ke dalam suatu **Model object**
+- Gunakan widget FutrueBuilder untuk menampilkan widget-widget dengan snapshot data terbaru yang telah dikonversi menjadi sebuah object
 
 ## Pengimplementasian Checklist
-- Membuat sebuah halaman baru bernama *BudgeteList* dan *BudgetForm*
-- Membuat sebuah custom `Drawer` widget dengan menerapkan *seperation concern by refactoring* untuk ditampilkan di tiap halaman
-- Set up navigasi halaman pada `Drawer`
-- Membuat global List yang terletak pada root widget untuk menyimpan object Budget
-- Implementasi halaman form dengan beberapa widget `TextFormField`, `DatePicker`, dan `DropdownMenu` 
-- Menambahkan package external Intl untuk date formating
-- Handling Save button untuk menyimpan transaksi baru ke dalam global List
-- Menampilkan semua object Budget dengan custom BudgetCard widget dengan melakukan iterasi melalui `ListView.builder`
+- Membuat sebuah halaman baru bernama *WatchList* dan *WatchItemDetail*
+- Membuat sebuah object baru bernama *WatchItem*
+- Membuat sebuah remote data source bernama *WatchListRemoteDataSource*
+- Membuat sebuah async function dengan return type `Future<List<WatchItem>>` pada *WatchListRemoteDataSource*
+- Pada halaman *WatchList*, tambahkan sebuahh builder yaitu `FutureBuilder` untuk menampilkan hasil *GET* resquest pada url mywatchlist
+- Tambahkan beberapa **conditional** sesuai kondisi *snapshot*, di mana terdiri dari *loading*, *has data*, dan *no data* 
+- Pada **conditional** *has data*, tambahkan `GestureDetector` untuk mendeteksi click event dan menambahkan functional navigasi ke halaman *WacthItemDetail*
