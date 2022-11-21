@@ -1,5 +1,5 @@
 
-# PBP Assignment 7 - *Elemen Dasar Flutter*
+# PBP Assignment 9 - *Web Service Integration*
 
 > Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh 
 > Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
@@ -35,7 +35,7 @@
 - Membuat sebuah function **http request** dengan method `GET` secara *async* untuk mengambil data ke pihak eksternal
 - Pada function tersebut lakukan parsing dengan `jsonDecode()` untuk mengubah response **String** menjadi **JSON**
 - Konversi object  **JSON** ke dalam suatu **Model object**
-- Gunakan widget FutrueBuilder untuk menampilkan widget-widget dengan snapshot data terbaru yang telah dikonversi menjadi sebuah object
+- Gunakan widget `FutrueBuilder` untuk menampilkan widget-widget dengan snapshot data terbaru yang telah dikonversi menjadi sebuah object
 
 ## Pengimplementasian Checklist
 - Membuat sebuah halaman baru bernama *WatchList* dan *WatchItemDetail*
