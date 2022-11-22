@@ -12,7 +12,7 @@
 
 
 ## Pengambilan data JSON tanpa membuat model
-Possible
+Pengambilan data JSON tanpa membuat model dapat dilakukan. Secara behavioral, JSON sendiri merupakan suatu object dalam notasi Javascirpt di mana pada bahasa Dart, hal tersebut ekuivalen dengan Map di mana object yang terdiri dari key dengan value pair. Namun, pengambilan data JSON tanpa melakukan konversi ke dalam suatu model bukan merupakan best practice dalam pengimplementasiannya. Konversi data JSON ke dalam suatu model bertujuan untuk meminimalisir kesalahan pengambilan atau pengiriman data melalui http request yang akan ditampilkan pada sisi UI aplikasi.
 
 ## Widget yang digunakan dan fungsinya
 - `Scaffold`, untuk mengimplementasikan struktur umum material layout design
